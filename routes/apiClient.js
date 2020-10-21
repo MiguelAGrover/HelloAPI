@@ -5,11 +5,18 @@ const pathPackage = require('path');
 let routeBuilder = path => {
 
     router.get(`${path}`, (req, res) => {
-        res.sendFile('index.html', { root: pathPackage.join(__dirname, '../public') });
+        res.sendFile('apiClient.html', { root: pathPackage.join(__dirname, '../public') });
+    });
+
+    
+    router.get(`${path}/example`, (req,res) => {
+        res.json({'Mesagge':'Example'});
     });
 
     return router
 
 }
+
+
 
 module.exports = routeBuilder;

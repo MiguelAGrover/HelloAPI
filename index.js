@@ -9,5 +9,5 @@ app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('/', routes);
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`)
 })
