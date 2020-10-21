@@ -1,0 +1,27 @@
+{
+  "name": "helloapi",
+  "version": "1.0.0",
+  "description": "This is a REST API with two endpoints, one would show the hello world example and the othe endpoint will consume an API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MiguelAGrover/HelloAPI.git"
+  },
+  "keywords": [
+    "api",
+    "helloWorld",
+    "example"
+  ],
+  "author": "Miguel Grover",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MiguelAGrover/HelloAPI/issues"
+  },
+  "homepage": "https://github.com/MiguelAGrover/HelloAPI#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
