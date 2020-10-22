@@ -7,6 +7,10 @@ const port = 3000
 const routes = require('./routes/routes')
 
 app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')))
+app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
+
 
 app.use('/', routes);
 

@@ -7,7 +7,7 @@ and output for the standard you wish to use (either "xml" or "json").
 const axios = require('axios');
 const { response } = require('express');
 
-let getWeatherAPI = function getWeather(longitud=20.644243,latitud=-103.416529,product="civil",output="json"){
+let getWeatherAPI = function getWeather(longitud,latitud,product,output){
         const promise = axios.get('http://www.7timer.info/bin/api.pl', {
         params: {
         lon: longitud,

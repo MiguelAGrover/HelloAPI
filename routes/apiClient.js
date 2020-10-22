@@ -11,8 +11,9 @@ let routeBuilder = path => {
     });
 
     router.get(`${path}/weather`, (req,res) => {
-        var longitud = (req.query.longitud) ? req.query.longitud : 20.644243;
-        var latitud = (req.query.latitud) ? req.query.latitud : -103.416529;
+        console.log(req.query.longitud)
+        var longitud = (req.query.longitud) ? req.query.longitud : 113.17;
+        var latitud = (req.query.latitud) ? req.query.latitud : 23.09;
         var product = (req.query.product) ? req.query.product : "civil";
         var output = (req.query.output) ? req.query.output : "json";
 

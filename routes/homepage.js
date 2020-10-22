@@ -8,6 +8,10 @@ let routeBuilder = path => {
         res.status(200).sendFile('index.html', { root: pathPackage.join(__dirname, '../public') });
     });
 
+    router.get(`${path}contact`, (req, res) => {
+        res.status(200).sendFile('contact.html', { root: pathPackage.join(__dirname, '../public') });
+    });
+
     return router
 
 }
