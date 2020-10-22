@@ -5,6 +5,7 @@ product for the product you wish to use (any of "astro", "civil", "civillight", 
 and output for the standard you wish to use (either "xml" or "json").
 */
 const axios = require('axios');
+const { response } = require('express');
 
 let getWeatherAPI = function getWeather(longitud=20.644243,latitud=-103.416529,product="civil",output="json"){
         const promise = axios.get('http://www.7timer.info/bin/api.pl', {

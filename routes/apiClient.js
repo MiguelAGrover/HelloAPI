@@ -10,21 +10,17 @@ let routeBuilder = path => {
         res.sendFile('apiClient.html', { root: pathPackage.join(__dirname, '../public') });
     });
 
-    
-    router.get(`${path}/example`, (req,res) => {
-        res.json({'Mesagge':'Example'});
-    });
-
     router.get(`${path}/weather`, (req,res) => {
-        longitud = req.query.longitud;
-        latitud = req.query.latitud;
-        product = req.query.product;
-        output = req.query.output;
+        var longitud = (req.query.longitud) ? req.query.longitud : 20.644243;
+        var latitud = (req.query.latitud) ? req.query.latitud : -103.416529;
+        var product = (req.query.product) ? req.query.product : "civil";
+        var output = (req.query.output) ? req.query.output : "json";
+
         result = getWeatherAPI(longitud,latitud,product,output)
                 .then(data => {
                     res.json(data)
                 })
-                .catch(err => console.log(err))
+                .catch(err => {res.status(404).json(err)})
     });
 
     router.get(`${path}/nationalize`, (req,res) => {

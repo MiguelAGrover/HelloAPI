@@ -5,7 +5,7 @@ const pathPackage = require('path');
 let routeBuilder = path => {
 
     router.get(`${path}`, (req, res) => {
-        res.sendFile('index.html', { root: pathPackage.join(__dirname, '../public') });
+        res.status(200).sendFile('index.html', { root: pathPackage.join(__dirname, '../public') });
     });
 
     return router
