@@ -4,6 +4,16 @@ var getWeatherAPI = require('../utilities/weatherAPI')
 var getNationalizeAPI = require('../utilities/nationalizeAPI')
 var router = express.Router();
 
+/*
+
+    This file create the routes corresponding to the APIs 
+    APIs included at this moment:
+        - Weather
+        - Nationalize
+
+
+*/
+
 let routeBuilder = path => {
 
     router.get(`${path}`, (req, res) => {
@@ -27,7 +37,7 @@ let routeBuilder = path => {
             {res.status(404).json({'ERR':'Product was not one of the following values [civil, astro, civillight, meteo or two]'})};
         }
         else if(typeof output != 'string' || !outputList.includes(output)){
-            {res.status(404).json({'ERR':'Output was not one of the following values[json, xml]'})};
+            {res.status(404).json({'ERR':'Output was not one of the following values [json, xml]'})};
         } else {
         result = getWeatherAPI(longitud,latitud,product,output)
                 .then(data => {
@@ -39,7 +49,7 @@ let routeBuilder = path => {
 
     router.get(`${path}/nationalize`, (req,res) => {
         var name = (req.query.name) ? req.query.name : "wizeline";
-        if(typeof name != 'string'){
+        if(typeof name != 'string' || !isNaN(Number(name))){
             {res.status(404).json({'ERR':'Name was not an string'})};
         }
         result = getNationalizeAPI(name)

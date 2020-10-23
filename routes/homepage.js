@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 const pathPackage = require('path');
 
+/*
+
+    This file will create the routes for the home page and contact pages.
+
+*/
+
 let routeBuilder = path => {
 
     router.get(`${path}`, (req, res) => {

@@ -2,6 +2,12 @@ var express = require('express');
 var router = express.Router();
 const pathPackage = require('path');
 
+/*
+
+    This file create the routes to the hello world endpoint
+
+*/
+
 let routeBuilder = path => {
 
     router.get(`${path}`, (req, res) => {

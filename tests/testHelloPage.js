@@ -19,7 +19,7 @@ describe("Hello World Page", () => {
     });
 
     describe("POST /hello", () => {
-        it("should get hello world page by POST", (done) => {
+        it("should not get hello world page by POST", (done) => {
              chai.request(app)
                  .post('/hello')
                  .end((err, res) => {
@@ -31,7 +31,7 @@ describe("Hello World Page", () => {
     });
 
     describe("DELETE /hello", () => {
-        it("should get hello world page by DELETE", (done) => {
+        it("should not get hello world page by DELETE", (done) => {
              chai.request(app)
                  .delete('/hello')
                  .end((err, res) => {

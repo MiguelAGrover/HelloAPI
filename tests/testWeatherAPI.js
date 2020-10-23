@@ -7,9 +7,8 @@ chai.use(chaiHttp);
 chai.should();
 describe("Weather API", function() {
     describe("GET /weather", function() {
-        // Test to get homep page
         this.timeout(10000);
-        it("should get weather information", function(done) {
+        it("should get weather information as json", function(done) {
              chai.request(app)
                  .get('/apiClient/weather')
                  .end((err, res) => {
@@ -20,8 +19,7 @@ describe("Weather API", function() {
                   });
          });
 
-        // Test to get single student record
-        it("should get weather information with two parameters", (done) => {
+        it("should get weather information with two parameters as json", (done) => {
              const longitud = 100;
              const latitud = 20;
              chai.request(app)
@@ -34,8 +32,7 @@ describe("Weather API", function() {
                   });
          });
          
-        // Test to get single student record
-        it("should get error of invalid coordinate", (done) => {
+        it("should get error of invalid coordinate as the latitud and longitud are out of range", (done) => {
             const longitud = 200;
             const latitud = 200;
             chai.request(app)
@@ -48,8 +45,7 @@ describe("Weather API", function() {
                  });
          });
 
-         // Test to get single student record
-        it("should get error of product", (done) => {
+        it("should get error of product as product is invalid", (done) => {
             const product = 'architect';
             chai.request(app)
                 .get(`/apiClient/weather?product=${product}`)
@@ -61,8 +57,7 @@ describe("Weather API", function() {
                  });
          });
 
-         // Test to get single student record
-         it("should get error of output", (done) => {
+         it("should get error of output as csv format is not valid", (done) => {
             const output = 'csv';
             chai.request(app)
                 .get(`/apiClient/weather?output=${output}`)
