@@ -1,6 +1,6 @@
 # HelloAPI
  This is an API with two endpoints, one webpage and an API client  
- More information about the apis can also be found while running the project on 
+ More information about the apis that were included in this project could be found while running the project on 
 
  localhost:3000/apiClient
 
