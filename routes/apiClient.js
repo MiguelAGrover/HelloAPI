@@ -39,6 +39,9 @@ let routeBuilder = path => {
 
     router.get(`${path}/nationalize`, (req,res) => {
         var name = (req.query.name) ? req.query.name : "wizeline";
+        if(typeof name != 'string'){
+            {res.status(404).json({'ERR':'Name was not an string'})};
+        }
         result = getNationalizeAPI(name)
                 .then(data => {
                     res.json(data)

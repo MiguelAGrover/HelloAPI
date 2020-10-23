@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Api Client</title>
+
+    <!-- Bootstrap core CSS -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/cover.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand">HelloAPI</h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/hello">Hello World</a>
+        <a class="nav-link active" href="/apiClient">API Client</a>
+        <a class="nav-link" href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">API Menu</h1>
+    <p class="lead">This is the API Menu, this will show you the APIs available in this project.</p>
+    <p>
+        <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseWeather" aria-expanded="false" aria-controls="collapseWeather">
+            Weather API
+        </button>
+    </p>
+    <div class="collapse" id="collapseWeather">
+        <div class="card card-body">
+            This will consume the API from http://www.7timer.info/doc.php?lang=en <br/>
+            endpoint: /apiClient/weather<br/>
+            parameters: <br/>
+                        longitud: this is a number that indicates longitud<br/>
+                        latitud: this is a number that indicates latitud<br/>
+                        product: this is a string and could give different information, possible values civil, astro, civillight, meteo or two<br/>
+                        output: this is a string which would give the output as json or xml<br/>
+        </div>
+    </div>
+    <br/>
+    <p>
+        <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseNationalize" aria-expanded="false" aria-controls="collapseNationalize">
+            Nationalize API
+        </button>
+    </p>
+    <div class="collapse" id="collapseNationalize">
+        <div class="card card-body">
+            This will consume the API from https://api.nationalize.io/ <br/>
+            endpoint: /apiClient/nationalize<br/>
+            parameters: <br/>
+                        name: this is the name to look for nationality<br/>
+        </div>
+    </div>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
